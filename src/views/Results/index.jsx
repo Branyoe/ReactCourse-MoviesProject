@@ -4,6 +4,7 @@ import { useFetchMoviesQuery } from '../../redux/api/movies';
 
 import PalomitasImg from '../../assets/palomitas.jpg'
 import Loading from './components/Loading';
+import List from './components/List';
 
 const Results = () => {
 
@@ -19,9 +20,9 @@ const Results = () => {
   });
 
   return (
-    <div className="flex">
-      <div className="w-3/5 overflow-y-auto p-10">
-        { isLoadin || isFetching ? <Loading/> : null}
+    <div className="flex flex-row">
+      <div className="w-3/5 h-screen overflow-y-auto px-10">
+        { isLoadin || isFetching ? <Loading/> : <List data={movies?.results}/>}
       </div>
       <div className="w-2/5">
         <img
