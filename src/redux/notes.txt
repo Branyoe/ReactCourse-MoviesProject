@@ -9,7 +9,7 @@ encuentra toda la información a diferencia de zunstand por ejemplo que puede te
 varias stores
 
 el estado es meramente read-only es decir que no lo puedes actualizar directamente
-para actualizarlo o modificarlo necesitas recorres el flujo (view, action, reducer, store)
+para actualizarlo o modificarlo necesitas recorres el flujo (view,"dispatch", action, "middlewares", reducer, store)
 
 los Reducers son los que se encargan de modificar la store y estos deben ser funciones
 puras
@@ -20,6 +20,7 @@ de hacer el trabajo asincrono
 
 
 Reducers (ejemplo complementario en actions/notes.txt)
++ se encarga de seccionar y consumir la store
 son funciones puras(no podemos hacer llamadas a API por ejemplo) y se encargan de actualizar la store o el estado dependiendo el action que se disparó
 un ejmplo podria ser
 
@@ -35,3 +36,15 @@ function pokemonsApp(state = initialState /* en caso que el state esté vacio */
       }
   }
 }
+
+RTK query
+es una alternativa a fetch o axios. Herramienta para data fetching y catching. utiliza fetch
+facilita trabajar con loaders
+utiliza catching guardando la respose en la store y comparando si el reqest nuevo es el mismo 
+para prevenir peticiones repetidas en rerenderizados
+
+para definir la configuracion de un endpoint se utiliza createApi();
+regresa un objeto de hooks dependiendo los endpoints definidos dentro de el.
+createApi evita el uso de actions y de reducers
+
+hace uso de fetchBaseQuery() es un wrapper de fetch()

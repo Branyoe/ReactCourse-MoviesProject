@@ -1,5 +1,8 @@
+//basicamente todo este archivo es el que te evítas al utilizar RTK query
+
 import { createAction } from "@reduxjs/toolkit";
 
+//estas serían las banderas que nos facilita RTK query, esta vez programadas manualmente
 export const startFetchMovieRatings = createAction("START_FETCH_MOVIE_RATINGS");
 export const successFetchMovieRatings = createAction("SUCCESS_FETCH_MOVIE_RATINGS");
 export const errorFetchMovieRatings = createAction("ERROR_FETCH_MOVIE_RATINGS");

@@ -1,8 +1,7 @@
 //***Imports
 import { useParams } from 'react-router'
-import { useNavigate } from "react-router"
-//Movies apiCall hook
-import { useFetchMoviesQuery } from '../../redux/api/movies'; 
+import { useNavigate } from "react-router" 
+import { useFetchMoviesQuery } from '../../redux/api/movies'; //Movies apiCall hook
 //Assest
 import PalomitasImg from '../../assets/palomitas.jpg'
 //Components
