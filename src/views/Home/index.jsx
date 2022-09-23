@@ -1,18 +1,37 @@
 import { useState } from "react";
 import { useNavigate } from "react-router"
-
 import Cine from "../../assets/cine.jpg"
 
+/**
+ * Home component
+ * @returns {jsx} home component view
+ */
 const Home = () => {
+  //***Hooks
   const navigate = useNavigate();
+
+  //***State variables
   const [search, setSearch] = useState('');
 
+  //***Handlers
+  /**
+   * handle the value of input
+   * @param {Event} value - Input value on change 
+   */
   const handleInputChange = ({ target: { value } }) => {
     setSearch(value);
   }
+
+  /**
+   * Handle clean button
+   */
   const handleCleanClick = () => {
     setSearch('');
   }
+
+  /**
+   * Handle search button
+   */
   const handleSearchClick = () => {
     navigate(`/results/${search.trim()}`);
   }
@@ -48,4 +67,9 @@ const Home = () => {
   );
 }
 
+/**
+ * Home component
+ * @module views/Home
+ * @see routes/RoutesComponent
+ */
 export default Home;

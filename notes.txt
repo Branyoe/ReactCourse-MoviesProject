@@ -1,0 +1,3 @@
+redux toolkit es una herramienta que te evita configurar redux manualmente en tu pproyecto de react
+
+los action y reducers se puden juntar en una sola capa

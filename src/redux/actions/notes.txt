@@ -1,0 +1,33 @@
+Action son funciones que retorna objetos planos y se caracterizan por tener un Key
+
+el objeto retornado debe tener una propiedad type para que el reducer lo pueda reconocer
+por ejemplo.
+
+const ADD_POKEMON = 'ADD_POKEMON'; //este seria el type
+
+{
+  type: ADD_POKEMON, //y así se implementa
+  pokemon: {
+    nombre: "Chicorita",
+    genero: "hembra"
+  }
+}
+
+las "actions" son ejecutadas por un "dispatch" y estas solicitan
+llevar a cabo alguna acción como eliminar un dato por ejmplo es importante recalcar que solo solicitan 
+segun el ejemplo anterior así luce un action
+
+function addPokemon (pokemon){ // donde pokemon viene directamente del componente donde se está disparando el accion
+  return {
+  type: ADD_POKEMON,
+  pokemon: pokemon
+}
+
+//componente x
+
+const dispatch = useDispatch();
+dispatch(addPokemon(pokemonRecabadoDeLaVista)); //y así se ejecuta desde un componente
+
+//resumen
+un action se encarga de recabar la información desde un componente para segun el tipo 
+de ésta solictar al reducer que se deve de hacer.

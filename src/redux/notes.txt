@@ -1,0 +1,37 @@
+Redux es un state management se encarga de preservar el estado global de la app
+y de distribuirlo a cualquier componente que sea necesario.
+
+este se conofrma de actions, reducers y la store
+
+la información o estado en redux se maneja en la store y esta es un mega objeto 
+el cual centraliza toda la información, es decir solo existe un punto donde se 
+encuentra toda la información a diferencia de zunstand por ejemplo que puede tener 
+varias stores
+
+el estado es meramente read-only es decir que no lo puedes actualizar directamente
+para actualizarlo o modificarlo necesitas recorres el flujo (view, action, reducer, store)
+
+los Reducers son los que se encargan de modificar la store y estos deben ser funciones
+puras
+
+
+entre actions y reducers existe algo llamado middlewares que son los que se encargan 
+de hacer el trabajo asincrono
+
+
+Reducers (ejemplo complementario en actions/notes.txt)
+son funciones puras(no podemos hacer llamadas a API por ejemplo) y se encargan de actualizar la store o el estado dependiendo el action que se disparó
+un ejmplo podria ser
+
+function pokemonsApp(state = initialState /* en caso que el state esté vacio */, action){
+  swithc(action.type){
+    case: ADD_POKEMON:
+      return {
+        ...state.allPokemons,
+        {
+          nombre: action.nombre,
+          genero: action.genero
+        }
+      }
+  }
+}

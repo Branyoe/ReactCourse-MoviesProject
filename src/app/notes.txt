@@ -1,0 +1,10 @@
+La store es toda la información o estado en nuestra 
+app, y tambien registra los listeners en forma de objeto y es la parte final del flujo de rdux
+
+un listener se registra mediante
+subscription(listener);
+
+esta pude consumirse desde cualquier componente mediante una subscritiono o un getState
+la store puede actualizarce desde un componente mediante un dispatch
+
+cuando el estado es actualizado todos los listeners se rerenderizan

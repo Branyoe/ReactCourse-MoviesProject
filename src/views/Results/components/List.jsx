@@ -1,9 +1,9 @@
 import ListItem from "./ListItem";
 
-const List = ({ data = [] }) => {
+const List = ({ data = [], onListItemClick }) => {
 
   return data?.map( movie => (
-    <ListItem key={movie.id} movie={movie}/>
+    <ListItem key={movie.id} {...movie} onListItemClick={onListItemClick} />
   ));
 }
 
